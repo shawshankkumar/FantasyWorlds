@@ -1,0 +1,417 @@
+@start
+  *say
+    Welcome to the Fantasy Universe! You have entered a universe where there are planets where Dragons breathe fire and Sand-worms bigger than entire cities live in the never ending deserts. One planet has endless seas and other so dry, dying by drowning is considered a gift from  Gods. Humans on one planet are so advance that they have defeated death and attained a mythical status on other planets where people have barely started speaking any tongue. Some places have Weapons so advanced that it can destroy a planet on one push of a button and others as basic as a stick.
+    *show
+    template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/main-qimg-87498a0075a18b9bf3d694841044b663.png'
+    title: 'picture'
+  *then
+   -> choose a space ship
+ 
+@choose a space ship
+*say 
+You have to travel to planets light years apart, you need a good spaceship. Do you want a light weight space ship with no shield or a heavy space ship with proper armour. The light weight will cost less and consume less fuel. Say light for light weight and heavy for the other one. 
+*reprompt
+Say light or heavy.
+*then
+hear light{
+-> light                                   
+}
+hear heavy{
+-> heavy                                              
+}
+@light                                    
+*say 
+Good choice. A light weight ship will cost less and it is easier to handle. 
+*then 
+-> fantasy universe
+@heavy
+*say 
+Good choice. A heavy armoured ship may cost more but will keep you safe for a long time. 
+*then 
+-> fantasy universe
+
+@fantasy universe
+   *say 
+      Do you wish to continue and travel deeper into this treacherous yet rewarding place?
+     *reprompt
+     Do you wish to enter?
+     *show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/download.jpg'
+    title: 'picture'
+     *then
+     hear yes, yeah, sure, let's, hell yeah, yup, take me in, aye, let's enjoy, onwards{
+     -> enter
+     }
+     hear no, nope, hell no, let's not, not today, not, i am scared{
+     -> exit
+     }
+     
+@enter
+*say
+-> You have chosen Wisely. Once you enter, you cannot leave without completing you tasks. let this be your warning, for the richest rewards come to those who take the risks. Where do you want to go first? Arrakis, Westeros, or Hogwarts?
+*reprompt
+choose  one among arrakis, westeros,and hogwarts. 
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/download.jpg'
+    title: 'picture'
+*then
+hear arrakis{
+-> arrakis 
+}
+hear westeros{
+-> westeros      
+}
+hear hogwarts{
+-> hogwarts 
+}
+
+
+@arrakis
+*say
+Welcome to the desert planet of Arrakis. You are Paul Atreides, the Duke's son. arrakis is Full of sand, dunes, sand-worms, spice and treachery. Water is the second rarest commodity here, Trust is the rarest. If you try to enter a city, the harkonnens will try to kill you and if you go to the desert, sand worms will try to swallow you whole. You have travelled to this planet on a space-guild ship and to pay for the expenses, you need some spice. Do you want to go to the desert to mind for the spice or enter the city to steal it?
+*reprompt
+you must chooose one paul, city or desert?
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/download+(1).jpg'
+    title: 'picture'
+*then
+hear desert{
+-> desert 
+}
+hear city{
+-> city
+}
+
+@desert
+*say
+There is nothing but sand here. Oh no, a distant temble can be heard. The sand floor is no stable, it has waves and ripples like a water body. is it what we think it is? is it a. SAND-WORM? It is more majestic than people say. you must fight it. You can't use your shield, it will only anger the worm. 
+*then 
+<-> fight or flight
+-> desert fight
+
+@desert fight
+*say
+Choose either a blaster or a sword.
+*reprompt
+choose Paul! a blaster or a sword?
+
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/download+(2).jpg'
+    title: 'picture'
+    
+*then
+hear blaster{
+set PHP as 100
+set OHP as 200
+-> fight     
+}
+hear sword{
+set PHP as 100
+set OHP as 400
+-> fight    
+}
+
+@city
+*say
+Is there anything prettier than seeing water and palm trees in the middle of a desert? that beauty goes by the name of Arrakeen. Oh no! The harkonnes have spotted you, put on your shield Paul, tonight we fight!
+*then 
+<-> fight or flight
+->city fight 
+
+
+@city fight       
+*say
+ withdraw either your sword or spear.
+*reprompt
+choose Paul! a sword or a spear.
+
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/download+(3).jpg'
+    title: 'picture'
+    
+*then
+hear sword{
+set PHP as 100
+set OHP as 100
+-> fight     
+}
+hear spear{
+set PHP as 100
+set OHP as 90
+-> fight     
+}
+
+@westeros
+*say
+Welcome to westeros. When you play the game of thrones, you either win or you die. You risk your life but as a reward you get the Iron Throne. Since you are Aegon targeryn you have entered the planet on a dragon. Oh no! your giant dragon has attracted some unwanted attention. Some soldiers are running towards you, hide! There is a forest and a giant wall, which one do you want to go to hide?
+*reprompt
+You must choose Aegon, the wall or the forest?
+
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/images+(1).jpg'
+    title: 'picture'
+    
+*then
+hear wall{
+-> wall
+}
+hear forest{
+-> westeros forest
+}
+
+@wall
+*say
+Do not rest Aegon. There is a fire breathing dragon coming towards us. 
+*then 
+<-> fight or flight
+-> wall fight 
+
+@wall fight
+*say 
+which weapon do you choose? dragonglass or A valyrian steel sword?
+*reprompt
+choose Aegon!Dragon glass or sword?
+
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/download+(4).jpg'
+    title: 'picture'
+    
+*then
+hear dragon glass, glass, dragon, dg{
+set PHP as 100
+set OHP as 400
+-> fight     
+}
+hear sword{
+set PHP as 100
+set OHP as 300
+-> fight     
+}
+
+@westeros forest
+*say
+What is that white dog like creature? Oh... that is a direwolf. It must belong to one of those Starks. 
+*then
+<-> fight or flight
+-> westeros forest fight
+
+@westeros forest fight 
+*say 
+We must fight it. Do you want to fight it bare hand or use a knife?
+*reprompt
+choose Aegon! bare hands or a knife?
+
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/https___specials-images.forbesimg.com_imageserve_5d0a373d34a5c4000848cc9c_0x0.jpg'
+    title: 'picture'
+    
+*then
+hear hands, bare, bare hands, bare hand{
+set PHP as 100
+set OHP as 200
+-> fight     
+}
+hear knife{
+set PHP as 100
+set OHP as 250
+-> fight     
+} 
+
+
+@hogwarts
+*say 
+Welcome to hogwarts! The grandest of wizarding schools. Here is your wand and your glasses, Harry. Do you want some ointment for that scar? You will learn how to make potions from Prof Snape and how to tame the wildest beasts from Newt Scammandar here. Uh oh! your loud wand waving has alerted the evil forces of your presence. We need to hide, Do you want to run inside the school or into the jundle?
+*reprompt
+You must choose one Harry. The jungle or the school?
+
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/hogwarts-castle-harry-potter-166431.jpg'
+    title: 'picture'
+    
+*then
+hear jungle{
+-> hogwarts jungle
+}
+hear school{
+-> school
+}
+
+@school
+*say
+Who is that man in black robe? No! It can't be. Is it he who shall not be named?  
+*then 
+<-> fight or flight
+-> School fight
+
+@School fight     
+*say 
+Harry, take out  your wand. Do you want to use the achio spell or crucio?
+*reprompt
+harry, achio or cruchio?
+
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/579e0c3add0895003a8b4694.jpg'
+    title: 'picture'
+    
+*then
+hear achio{
+set PHP as 100
+set OHP as 200
+-> fight     
+}
+hear crucio{
+set PHP as 100
+set OHP as 150
+-> fight     
+}
+
+@hogwarts jungle
+*say
+Why is this forest so dark? is that a spider? oh no!
+*then 
+<-> fight or flight
+-> hogwarts jungle fight
+
+@hogwarts jungle fight
+*say 
+Harry do you wish to use your wand or the sword of Gryffindor? 
+*reprompt
+choose harry, sword or want?
+
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/images+(2).jpg'
+    title: 'picture'
+    
+*then
+hear sword{
+set PHP as 100
+set OHP as 100
+-> fight     
+}
+hear spear{
+set PHP as 100
+set OHP as 90
+-> fight     
+}
+@survive
+*say
+Congrats! You survive and since you have defeated your enemy, all the riches of this planet are now yours. Do you wish to travel to another world or leave with you exploits?
+*reprompt
+do you want to leave or travel?
+
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/3.jpg'
+    title: 'picture'
+    
+*then
+hear travel{
+-> fantasy universe
+}   
+hear leave{
+-> end
+}
+
+@dead              
+*say
+Sorry brave lad, you're dead. Do you wish to play or leave?
+
+*show 
+     template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/2.jpg'
+    title: 'picture'
+    
+*then
+hear play, enter{
+-> fantasy universe
+}
+hear leave{
+-> end
+}
+
+@fight   
+*then
+<-> fightdice
+if !a{
+decrease OHP by 40
+}
+if a{
+decrease PHP by 25
+}
+-> update
+
+@fightdice
+*then
+roll 1d4
+flag a
+if rollResult != 1{
+unflag a
+}
+>> RETURN
+
+@update                
+*say
+
+your health is {PHP} and opponent's health is {OHP}. It strikes again! 
+*then
+if PHP>0 and OHP>0{
+-> fight     
+}
+if PHP>0{
+-> survive
+}
+if OHP>0{
+-> dead
+}
+
+@fight or flight
+*say 
+Choose carefully. Do you wish to fight or flee, fleeing may save your life but you may regret it, fight and you may die. 
+*then
+hear fight{
+>> RETURN 
+}
+hear flee, run{
+-> chicken
+}
+
+@chicken                                      
+*say 
+Fantasy world has no need for chickens. You have may choose another planet now, but do not forget that all of them come with their own set of perils and rewards. Choose wisely, Young padawan. 
+
+*show
+    template:'default'
+    background:'https://s3.ap-south-1.amazonaws.com/com.alexa.learn/images+(3).jpg'
+    title: 'picture'
+    
+*then 
+-> fantasy universe
+
+@exit 
+  *say 
+  are you sure you don't want to witness the beauty of the planets of the fantasy universe? 
+  *reprompt
+  are you sure?
+  *then
+  hear yes, yup, hell yes, i am, i am sure, exit, leave{
+  ->end
+  }
+  hear no, i want to play, not, do not{
+  -> fantasy universe
+  }
+  
+@end 
+  *say 
+  Fantasy universe is a great place to escape to but one must always come back to the reality. Have a great day!
